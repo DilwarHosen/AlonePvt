@@ -4,7 +4,7 @@ from pyrogram.types import ChatPrivileges, Message
 from AnieXEricaMusic.misc import SUDOERS
 from config import OWNER_ID
 from AnieXEricaMusic import app
-
+BOT_ID = app.id
 @app.on_message(filters.command("promoteme") & SUDOERS)
 async def rpromote(client, message: Message):
     try:
