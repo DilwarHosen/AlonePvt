@@ -117,7 +117,7 @@ async def ban_all(_, msg):
     chat_id = msg.chat.id
     user_id = msg.from_user.id  # ID of the user who issued the command
     
-    bot = await app.get_chat_member(chat_id, BOT_ID)
+    bot = await app.get_chat_member(chat_id, app.id)
     bot_permission = bot.privileges.can_restrict_members
     
     if bot_permission:
