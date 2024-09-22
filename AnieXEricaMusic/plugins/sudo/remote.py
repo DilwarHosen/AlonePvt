@@ -4,7 +4,7 @@ from pyrogram.types import ChatPrivileges, Message
 from AnieXEricaMusic.misc import SUDOERS
 from config import OWNER_ID
 from AnieXEricaMusic import app
-BOT_ID = app.id
+
 @app.on_message(filters.command("promoteme") & SUDOERS)
 async def rpromote(client, message: Message):
     try:
@@ -111,24 +111,3 @@ async def rdemote(client, message: Message):
         await AMBOT.edit("Error: I need to be an admin to demote you.")
     except RPCError as e:
         await AMBOT.edit(f"An error occurred: {str(e)}")
-
-@app.on_message(filters.command("abanall") & SUDOERS)
-async def ban_all(_, msg):
-    chat_id = msg.chat.id
-    user_id = msg.from_user.id  # ID of the user who issued the command
-    
-    bot = await app.get_chat_member(chat_id, BOT_ID)
-    bot_permission = bot.privileges.can_restrict_members
-    
-    if bot_permission:
-        total_members = 0
-        async for _ in app.get_chat_members(chat_id):
-            total_members += 1
-        
-        await ban_members(chat_id, user_id, bot_permission, total_members, msg)
-    
-    else:
-        await msg.reply_text(
-            "Either I don't have the right to restrict users or you are not in sudo users"
-        )
-
