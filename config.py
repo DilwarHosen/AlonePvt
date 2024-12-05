@@ -12,7 +12,7 @@ BOT_TOKEN = getenv("BOT_TOKEN","5963562690:AAHep0Jmy5DPJemknWCIMVH8Bdt3vX3HY9E")
 MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://hny:zara@cluster0.lfe5o.mongodb.net/?retryWrites=true&w=majority")
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", "9999"))
 LOGGER_ID = int(getenv("LOGGER_ID", "-1001603822916"))
-BOTADDLOGS = int(getenv("BOTADDLOGS", "-1001603822916") # LOGGER_ID Id Also Use No Problem
+BOTADDLOGS = int(getenv("BOTADDLOGS", "-1001603822916")) # LOGGER_ID Id Also Use No Problem
 GBAN_LOGS = int(getenv("GBAN_LOGS", "-1001603822916"))
 GCAST_USERS = list(map(int, getenv("GCAST_USERS", "6079943111").split()))
 OWNER_ID = int(getenv("OWNER_ID", 6079943111))
